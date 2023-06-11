@@ -1,6 +1,7 @@
  #comments-container {
     display: flex;
-    text-align: center; 
+    text-align: center;
+    margin-top: 50px;
 }
   
  
