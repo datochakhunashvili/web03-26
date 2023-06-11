@@ -200,11 +200,41 @@
             if (id === "" || postId === "" || name === "" || email === "" || body === "") {
                 alert("Ensure you input a value in both fields!");
             } else 
-            
+
             alert (" გთხოვთ შეავსოთ ველი");
         
         });
-  
+
+
+        // 4.ქარდებს დაამატეთ წაშლის ღილაკი და  და დაჭერისას წაშალეთ კონკრეტული ქარდი 
+        //   დამხმარე მასალა
+        //    https://codingbeautydev.com/blog/javascript-remove-element-from-array-by-
+        //    id/#:~:text=splice()%20methods-,To%20remove%20an%20element%20from%20an%
+        //    20array%20by%20ID%20in,the%20object%20from%20the%20array.
+
+
+
+
+        var cards = [
+        { id: 1, name: 'ქარდი 1' },
+        { id: 2, name: 'ქარდი 2' },
+        { id: 3, name: 'ქარდი 3' },
+        ];
+        
+
+        function removeCard(cardId) {
+        var index = cards.findIndex(function(card) {
+            return card.id === cardId;
+        });
+
+        if (index !== -1) {
+            cards.splice(index, 1);
+        }
+        }
+    
+        console .log( cards);
+        removeCard(3);
+        
   
           
             
