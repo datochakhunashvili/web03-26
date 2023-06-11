@@ -9,7 +9,29 @@
 </head>
 <body>
 
-    <div id="comments-container"></div>
+    <div id="comments-container"></div><br><br>
+
+
+    <form id="myForm">
+        <label for="id">ID:</label>
+        <input type="text" id="id" name="id" required><br><br>
+        
+        <label for="postId">Post ID:</label>
+        <input type="text" id="postId" name="postId" required><br><br>
+        
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+        
+        <label for="body">Body:</label>
+        <textarea id="body" name="body" required></textarea><br><br>
+        
+        <input type="submit" value="Submit">
+        </form>
+
+        <div id="result"></div>
 
 
     <script>
@@ -156,7 +178,37 @@
         commentElement.textContent = comment.body;
         commentsContainer.appendChild(commentElement);
         });
+
+
+        //  3.  დაამატეთ ფორმა შემედგი   ველებით id,postId, name, email,
+        //  body (body სთვის გამოიყენეთ textarea)  ღილაკზე დაჭერისას
+        //  (form submit) შეყვანილი ინფორმაცია დაამატეთ ზემოთ არსებულ მასივს, 
+        //  თუ რომელიმე შესაყვანი ველი ცარიელია, გამოიტანეთ ტექსტი წითლად 
+        //  " გთხოვთ შეავსოთ ველი". 
+        // დამხმარე მასალა 
+        // https://www.freecodecamp.org/news/how-to-submit-a-form-with-javascript/
         
+       
+        document.getElementById("myForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            var id = document.getElementById("id").value;
+            var postId = document.getElementById("postId").value;
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var body = document.getElementById("body").value;
+        
+            if (id === "" || postId === "" || name === "" || email === "" || body === "") {
+                alert("Ensure you input a value in both fields!");
+            } else 
+            
+            alert (" გთხოვთ შეავსოთ ველი");
+        
+        });
+  
+  
+          
+            
+            
             
          
 
